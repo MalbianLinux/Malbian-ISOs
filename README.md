@@ -7,6 +7,7 @@ There are two ISOs available for now. The lightest one is running DWM and the ot
 ## Installation Guide:
 
 After downloading the ISO chech it's Hashes:
+
 **malbian_dwm_alfa-release_x86_64.iso:**
 - MD5: 384da83da02274df8659a07d222eae57
 - SHA1: c4e37d814ae2a207060398ea1486a307c9db3703
