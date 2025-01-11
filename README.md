@@ -45,3 +45,15 @@ sudo qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=testImage.img -m 4
 With that we completed the installation of Malbian DWM (Alfa Release).
 
 The same can be done with the Xfce image.
+
+## Sample View
+
+DWM Desktop:
+
+<p align="center"><img src="./samples/malbian_dwm_alfa_release1.png"></p>
+<p align="center"><img src="./samples/malbian_dwm_alfa_release2.png"></p>
+
+XFCE Desktop:
+
+<p align="center"><img src="./samples/malbian_xfce_alfa_release1.png"></p>
+<p align="center"><img src="./samples/malbian_xfce_alfa_release2.png></p>
