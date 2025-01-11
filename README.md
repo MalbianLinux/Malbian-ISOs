@@ -56,4 +56,4 @@ DWM Desktop:
 XFCE Desktop:
 
 <p align="center"><img src="./samples/malbian_xfce_alfa_release1.png"></p>
-<p align="center"><img src="./samples/malbian_xfce_alfa_release2.png></p>
+<p align="center"><img src="./samples/malbian_xfce_alfa_release2.png"></p>
