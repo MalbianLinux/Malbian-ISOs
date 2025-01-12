@@ -18,16 +18,17 @@ After downloading the ISO chech it's Hashes:
 - SHA1: cd227dab604554c2aa1261dd038afbcbded04ec0
 - SHA256: 6e7e8aa068fea77fb4fd54c780aed2824971da9c52b984e135640e5e92f0c050 
 
-After verifying the ISO hashes you can now run them in a hypervisor. In our example we're gonna do it for qemu.
+After verifying the ISO hashes you can now run them in a hypervisor. In our example we're gonna do the installation in qemu.
+
 First, we need to place the ISO in a combinient place and then create an image:
 ```shell
 cd /var/lib/libvirt/images
-sudo mv ~/Downloads/malbian_dwm_alfa-release_x86_64.iso .
+sudo mv ~/Downloads/malbian_xfce_alfa-release_x86_64.iso .
 sudo qemu-img create -f qcow2 malbianImage.img 30G
 ```
 Now that we have our image created we can simply boot it from the ISO:
 ```shell
-sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_dwm_alfa-release_x86_64.iso -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
+sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_xfce_alfa-release_x86_64.iso -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
 ```
 
 The credentials are **live:evolution**
@@ -42,18 +43,16 @@ Complete the instalation and now you can boot from disk running:
 sudo qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=testImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
 ```
 
-With that we completed the installation of Malbian DWM (Alfa Release).
-
-The same can be done with the Xfce image.
+With that we completed the installation of Malbian XFCE (Alfa Release).
 
 ## Sample View
-
-DWM Desktop:
-
-<p align="center"><img src="./samples/malbian_dwm_alfa_release1.png"></p>
-<p align="center"><img src="./samples/malbian_dwm_alfa_release2.png"></p>
 
 XFCE Desktop:
 
 <p align="center"><img src="./samples/malbian_xfce_alfa_release1.png"></p>
 <p align="center"><img src="./samples/malbian_xfce_alfa_release2.png"></p>
+
+DWM Desktop:
+
+<p align="center"><img src="./samples/malbian_dwm_alfa_release1.png"></p>
+<p align="center"><img src="./samples/malbian_dwm_alfa_release2.png"></p>
