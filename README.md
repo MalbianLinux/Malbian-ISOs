@@ -1,37 +1,39 @@
 # Malbian-ISOs
 
-[Malbian ISOs](https://drive.google.com/drive/u/2/folders/1QfVZWiBBJb9UHMUkeOeDuoTZrOpJAYax) are released on google drive.
+[Malbian ISOs](https://sourceforge.net/projects/malbianlinux/files/images/) are released on SourceForge.
 
-There are two ISOs available for now. The lightest one is running DWM and the other one is using Xfce as a desktop environment.
+There is one ISO available for now. It is using XFCE as a desktop environment.
 
 ## Installation Guide:
 
-After downloading the ISO chech it's Hashes:
-
-**malbian_dwm_alfa-release_x86_64.iso:**
-- MD5: 384da83da02274df8659a07d222eae57
-- SHA1: c4e37d814ae2a207060398ea1486a307c9db3703
-- SHA256: e035c7a6537c7842966eba8056f65f1aa81b0072ae78fac448294d42333edc51
+Prepare the iso:
+```shell
+cd ~/Downloads
+unzip -d malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
+```
+Don't forget to check it's Hashes:
 
 **malbian_xfce_alfa-release_x86_64.iso:**
-- MD5: c3fe81d794d4d963217d45865828dbf9
-- SHA1: cd227dab604554c2aa1261dd038afbcbded04ec0
-- SHA256: 6e7e8aa068fea77fb4fd54c780aed2824971da9c52b984e135640e5e92f0c050 
+- MD5: c9e4694de55ccc84b94e418331ceacbd 
+- SHA1: 234d44c589a9082c51645793fea298a61f8882bb
+- SHA256: bd970e8067ff42506ec53afa930c1c8a1ee4e0cf9570f84ee653a4cc784c9236 
+- SHA384: 1c2c61a1a1e781544a212a2dd4bacb3c0fdcca0e624f1a9111c18df01314a9d2adcd333be4531d77fb073c56d06fedb8
+- shA512: b2fe336527e3c460350723854dd72b378bbd4951a78d0d21e990d9a1dd36a53945d2560704cf8537f31493425567fd4206749c0f156e73065880f80a71557e2b
 
 After verifying the ISO hashes you can now run them in a hypervisor. In our example we're gonna do the installation in qemu.
 
 First, we need to place the ISO in a combinient place and then create an image:
 ```shell
 cd /var/lib/libvirt/images
-sudo mv ~/Downloads/malbian_xfce_alfa-release_x86_64.iso .
+sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-0_x86_64.iso
 sudo qemu-img create -f qcow2 malbianImage.img 30G
 ```
 Now that we have our image created we can simply boot it from the ISO:
 ```shell
-sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_xfce_alfa-release_x86_64.iso -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
+sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_xfce_alf-release_x86_64.iso -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
 ```
 
-The credentials are **live:evolution**
+The credentials for the live session are **malbian:malbian**
 
 If you wish to install Malbian OS then just open a terminal and run:
 ```shell
@@ -43,7 +45,7 @@ Complete the instalation and now you can boot from disk running:
 sudo qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=testImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
 ```
 
-With that we completed the installation of Malbian XFCE (Alfa Release).
+With that we completed the installation of Malbian XFCE (Alpha - Bokken).
 
 ## Sample View
 
