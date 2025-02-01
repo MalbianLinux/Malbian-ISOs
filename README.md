@@ -26,7 +26,7 @@ unzip -d malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
 After the ISO has been set, we need to chose a hypervisor to run it. In our example we're gonna do the installation in qemu. Place the ISO in a combinient place and then create an image:
 ```shell
 cd /var/lib/libvirt/images
-sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-0_x86_64.iso
+sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-0_x86_64.iso .
 sudo qemu-img create -f qcow2 malbianImage.img 30G
 ```
 Now that we have our image created we can simply boot it from the ISO:
