@@ -6,21 +6,24 @@ There is one ISO available for now. It is using XFCE as a desktop environment.
 
 ## Installation Guide:
 
-Prepare the iso:
+Verify file Hashes:
 ```shell
-cd ~/Downloads
-unzip -d malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
+md5sum malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
+sha1sum malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
+sha256sum malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
 ```
-Don't forget to check it's Hashes:
-
-**malbian_xfce_alpha-bokken-v1-0_x86_64.iso:**
+**malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz:**
 - MD5: c9e4694de55ccc84b94e418331ceacbd 
 - SHA1: 234d44c589a9082c51645793fea298a61f8882bb
 - SHA256: bd970e8067ff42506ec53afa930c1c8a1ee4e0cf9570f84ee653a4cc784c9236 
 
-After verifying the ISO hashes you can now run them in a hypervisor. In our example we're gonna do the installation in qemu.
+After verifying the ISO hashes we can unzip the the file and prepare the iso:
+```shell
+cd ~/Downloads
+unzip -d malbian_xfce_alpha-bokken-v1-0_x86_64.iso.gz
+```
 
-First, we need to place the ISO in a combinient place and then create an image:
+After the ISO has been set, we need to chose a hypervisor to run it. In our example we're gonna do the installation in qemu. Place the ISO in a combinient place and then create an image:
 ```shell
 cd /var/lib/libvirt/images
 sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-0_x86_64.iso
