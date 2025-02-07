@@ -25,7 +25,7 @@ sha256sum malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
 After verifying the ISO hashes we can unzip the the file and prepare the iso:
 ```shell
 cd ~/Downloads
-unzip -d malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
+gzip -d malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
 ```
 
 After the ISO has been set, we need to chose a hypervisor to run it. In our example we're gonna do the installation in qemu. Place the ISO in a combinient place and then create an image:
