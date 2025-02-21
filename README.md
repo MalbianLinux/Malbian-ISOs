@@ -4,6 +4,11 @@
 
 There is one ISO available for now. It is using XFCE as a desktop environment.
 
+You can download the latest release:
+```shell
+wget https://sourceforge.net/projects/malbianlinux/files/images/malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz/download
+```
+
 ## Installation Guide:
 
 Verify file Hashes:
