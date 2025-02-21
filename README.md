@@ -8,10 +8,15 @@ There is one ISO available for now. It is using XFCE as a desktop environment.
 
 Verify file Hashes:
 ```shell
-md5sum malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
-sha1sum malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
-sha256sum malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
+md5sum malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz
+sha1sum malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz
+sha256sum malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz
 ```
+**malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz:**
+- MD5: d5cdf5e4460f83e1f6c616e4b431a926  
+- SHA1: fe91ac75fff06de3823df98722c5e7c607a2cb32  
+- SHA256: 1e8d48b660f8c75288e5c05d4bd78cb30436959e5bbafe649f70c65d3123b2be
+
 **malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz:**
 - MD5: 0af328bf27c06c3aff8068bc5d85551c 
 - SHA1: 8e301106ba0f7d35e7d3a7ea58544c9c8f14d3a8
@@ -25,18 +30,18 @@ sha256sum malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
 After verifying the ISO hashes we can unzip the the file and prepare the iso:
 ```shell
 cd ~/Downloads
-gzip -d malbian_xfce_alpha-bokken-v1-1_x86_64.iso.gz
+gzip -d malbian_xfce_alpha-bokken-v1-2_x86_64.iso.gz
 ```
 
 After the ISO has been set, we need to chose a hypervisor to run it. In our example we're gonna do the installation in qemu. Place the ISO in a combinient place and then create an image:
 ```shell
 cd /var/lib/libvirt/images
-sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-1_x86_64.iso .
+sudo mv ~/Downloads/malbian_xfce_alpha-bokken-v1-2_x86_64.iso .
 sudo qemu-img create -f qcow2 malbianImage.img 30G
 ```
 Now that we have our image created we can simply boot it from the ISO:
 ```shell
-sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_xfce_alpha-bokken-v1-1_x86_64 -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
+sudo qemu-system-x86_64 -enable-kvm -cdrom /var/lib/libvirt/images/malbian_xfce_alpha-bokken-v1-2_x86_64 -boot menu=on -drive file=malbianImage.img -m 4G -cpu host -smp 2 -vga virtio -display sdl,gl=on
 ```
 
 The credentials for the live session are **malbian:malbian**
